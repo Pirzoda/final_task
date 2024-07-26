@@ -1,21 +1,22 @@
 exports.config = {
     runner: 'local',
     specs: [
-        './src/tests/*.spec.js'
+        './src/tests/**/*.js'
     ],
     maxInstances: 1,
     capabilities: [{
         maxInstances: 1,
-        browserName: 'chrome',
-        acceptInsecureCerts: true
+        browserName: 'chrome'
     }],
-    logLevel: 'info',
+    logLevel: 'debug',
     bail: 0,
     baseUrl: 'http://localhost',
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
-    services: ['chromedriver'], 
+    services: [
+        ['chromedriver',  ]
+    ],
     framework: 'mocha',
     reporters: ['spec'],
     mochaOpts: {
