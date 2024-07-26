@@ -1,10 +1,13 @@
 const assert = require('chai').assert;
-const LoginPage = require('../pageobjects/LoginPage');
-const DashboardPage = require('../pageobjects/DashboardPage');
+const LoginPage = require('../pageobjects/login.page');;
+const DashboarPage = require('../pageobjects/dashboard.page');
+
+const LoginPage = new LoginPage();
+const DashboardPage = new DashboarPage();
 
 describe('SauceDemo Login Tests', () => {
     beforeEach(async () => {
-        await browser.url('https://www.saucedemo.com/');
+        await DashboardPage.open();
     });
 
     afterEach(async () => {
